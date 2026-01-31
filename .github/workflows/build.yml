@@ -29,8 +29,9 @@ jobs:
         pip install -r requirements.txt
 
     - name: Construir o APK
+      # AQUI ESTÁ O TRUQUE: 'yes |' responde "Sim" automaticamente para criar o projeto
       run: |
-        flet build apk --verbose
+        yes | flet build apk --verbose
 
     - name: Fazer Upload do APK
       uses: actions/upload-artifact@v4
